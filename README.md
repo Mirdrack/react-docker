@@ -2566,3 +2566,25 @@ If you're seeing this error, you're likely using an old version of `react-script
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebook/create-react-app/issues) or [contribute some!](https://github.com/facebook/create-react-app/edit/master/packages/react-scripts/template/README.md)
 # react-docker
+
+
+## Docker commands
+```
+ docker build -t react-dev .
+ docker run -it --rm \
+    --name react-dev \ 
+    -v "$PWD":/usr/src/app \
+    -w /usr/src/app react-dev:latest create-react-app counter
+
+docker run -it --rm \
+    --name my-running-script  \
+    -v "$PWD":/usr/src/app \
+    -w /usr/src/app \
+    react-dev create-react-app counter
+
+docker run -it --rm \
+    --name my-running-script  \
+    -v "$PWD":/usr/src/app \
+    -w /usr/src/app/src \
+    react-dev create-react-app counter
+```
